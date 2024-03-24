@@ -64,7 +64,7 @@ const Newsletter: React.FC = () => {
     
         try {
           
-            const response = await fetch('https://proyectoagoraback.onrender.com/users/newsletter', {
+            const response = await fetch('https://proyectobackendagora.onrender.com/users/Newsletter', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
