@@ -43,17 +43,47 @@ const Newsletter: React.FC = () => {
         return errores;
     };
 
-    const handleSubmit = (e: React.SyntheticEvent) => {
+    const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
-
+    
         const errores = validarCampos();
         if (Object.keys(errores).length > 0) {
             setErrores(errores);
             return;
         }
-
-        console.log(nombre, apellido, correoElectronico, profesion, empresa, pais);
+    
+        const datos = {
+            nombre: nombre,
+            apellido: apellido,
+            correoElectronico: correoElectronico,
+            profesion: profesion,
+            empresa: empresa,
+            pais: pais,
+           
+        };
+    
+        try {
+          
+            const response = await fetch('https://proyectoagoraback.onrender.com/users/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datos)
+            });
+    
+            if (response.ok) {
+              
+                console.log('Datos enviados correctamente');
+            } else {
+            
+                console.error('Error al enviar los datos:', response.statusText);
+            }
+        } catch (error:any) {
+            console.error('Error al enviar los datos:', error.message);
+        }
     };
+    
 
     return (
         <div className="backgroundgray p-8 rounded-md shadow-md  px-30">
