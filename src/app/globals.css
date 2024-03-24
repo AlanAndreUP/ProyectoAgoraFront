@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+:root {
+  --primary-color: #333333;
+  --primary-text-color:#19417f;
+  --hover-color: #19417f;
+  --hover-scale: 1.1;
+  --button-bg-color: #c36;
+  --button-hover-bg-color: #a24;
+  --container-max-width: 1200px;
+  --container-padding: 20px;
+  --margin-standard-left: 1.5em!important;
+  --margin-standard-right: 5em!important;
+  --margin-standard-right-small: 0.5em!important;
+  --font-size: 13.31px;
+}
+ body {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

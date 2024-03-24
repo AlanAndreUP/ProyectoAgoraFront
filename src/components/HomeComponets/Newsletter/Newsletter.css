@@ -1,0 +1,26 @@
+.input-transparent {
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    
+  }
+  
+  .input-transparent:focus {
+    border-color: white;
+  }
+
+.backgroundgray{
+ background-color: var(--primary-color);
+}
+.buttonenviar{
+    background-color: var(--button-bg-color);
+    color: white;
+    border: 2px solid var(--button-bg-color);
+    border-radius: 1em; 
+    padding: 0.1em 2em; 
+    font-size: 1em; 
+    cursor: pointer;
+}
+  

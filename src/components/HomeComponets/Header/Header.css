@@ -1,0 +1,68 @@
+
+  
+  .elementor-item,
+  .elementor-item-blue {
+      padding-left: 4px;
+      padding-right: 4px;
+      color: var(--primary-color);
+      fill: var(--primary-color);
+      font-size: var(--font-size);
+      font-weight: 400;
+      transition: color 0.3s, transform 0.3s; /* Transición para el color y el tamaño */
+  }
+  
+  .elementor-item:hover {
+      color: var(--hover-color); 
+      transform: scale(var(--hover-scale)); 
+  }
+  
+  .elementor-item-blue {
+      padding-left: 6px;
+      padding-right: 4px;
+      color: var(--hover-color);
+      fill: var(--hover-color);
+      font-weight: bold !important;
+  }
+  
+  .elementor-item-blue:hover {
+      color: #c36; /* Cambiar el color a azul al hacer hover */
+      transform: scale(var(--hover-scale)); /* Hacer el elemento 10% más grande al hacer hover */
+  }
+  
+  .buttondonar {
+      background-color: var(--button-bg-color);
+      color: white;
+      border: 2px solid var(--button-bg-color);
+      border-radius: 1em; 
+      padding: 0.1em 2em; 
+      font-size: 0.80em; 
+      cursor: pointer;
+  }
+  
+  .buttondonar:hover {
+      background-color: var(--button-hover-bg-color);
+  }
+  
+  .containermargin {
+      max-width: var(--container-max-width);
+      margin-left: auto; 
+      margin-right: auto; 
+      padding-left: var(--container-padding);
+      padding-right: var(--container-padding); 
+  }
+  
+  .marginstandarleft {
+      margin-right: var(--margin-standard-left);
+  }
+  
+  .marginstandarright {
+      margin-left: var(--margin-standard-right);
+      margin-right: var(--margin-standard-right-small);
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
