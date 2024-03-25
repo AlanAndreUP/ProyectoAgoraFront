@@ -59,7 +59,7 @@ const Newsletter: React.FC = () => {
             profesion: profesion,
             empresa: empresa,
             pais: pais,
-           
+           role:"Newsletter",
         };
     
         try {
