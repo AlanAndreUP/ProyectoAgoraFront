@@ -5,6 +5,7 @@ import Navbar from "@/components/BlogComponets/Navbar/Navbar";
 import Footer from "@/components/HomeComponets/Footer/Footer";
 import CardOportunidades from "@/components/BlogComponets/CardBlog/CardBlog";
 import Loader from "@/components/HomeComponets/Loader/Loader";
+import Webaccessibilty from "@/components/HomeComponets/Webaccessibility/Webaccessibility";
 
 interface Blog {
     _id: string;
@@ -60,7 +61,9 @@ const Home: React.FC = () => {
             ) : (
                 <div>
                     <Header />
+                  
                     <main>
+                    <Webaccessibilty />
                         <section className="pt-40 pb-20 px-20">
                             <div className="container mx-auto grid grid-cols-2 gap-4">
                                 <div className="FondoBlue text-white py-16 rounded-lg overflow-hidden">

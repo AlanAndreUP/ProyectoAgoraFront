@@ -6,6 +6,7 @@ import Loader from "@/components/HomeComponets/Loader/Loader";
 import CardOportunidades from "@/components/BlogComponets/CardBlog/CardBlog";
 import { faFacebook, faTwitter, faInstagram, faLinkedin, faYoutube, faPinterest } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Webaccessibilty from '@/components/HomeComponets/Webaccessibility/Webaccessibility';
 interface Blog {
     _id: string;
     title: string;
@@ -76,8 +77,10 @@ const BlogPage: React.FC = () => {
             ) : (
                 <div>
                     <Header />
+                   
                     {blog ? (
                         <main>
+                             <Webaccessibilty />
                             <section className="pt-20 pb-10">
                                 <div className="FondoGray text-white py-16 px-32 rounded-lg overflow-hidden">
                                     <div className="container mx-auto">

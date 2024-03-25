@@ -15,6 +15,7 @@ import Loader from "@/components/HomeComponets/Loader/Loader";
 
 
 import './page.css';
+import Webaccessibilty from '@/components/HomeComponets/Webaccessibility/Webaccessibility';
 const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
@@ -32,10 +33,12 @@ const Home: React.FC = () => {
         <div>
       <Header />
       <ImgContainer
-        src="/ImgContainer.webp"
+        src="/image.png"
         alt="Convocatoria 2024"
          />
+         
       <main>
+      <Webaccessibilty />
         <section className="pt-20 pb-10 ">
           <div className="container mx-auto grid grid-cols-2 gap-4">
             <div className="col-span-1">
