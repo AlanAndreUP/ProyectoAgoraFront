@@ -1,8 +1,8 @@
 .TextColor{
     color: var(--primary-text-color); 
 }
-.FondoBlue{
-    background-color: var(--primary-text-color);
+.FondoGray{
+    background-color: var(--primary-color);
 }
 .buttonOferta {
     background-color: var(--button-bg-color);
@@ -17,16 +17,4 @@
 
 .buttonOferta:hover {
     background-color: var(--button-hover-bg-color);
-}@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fadeInAnimation {
-    animation: fadeIn 1s ease-in-out;
-  }
-  
+}

@@ -1,22 +1,29 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './Navbar.css';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+    setFilterType: (type: string | null) => void; 
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setFilterType }) => {
     const [menuItems] = useState([
-        { title: 'Blog', link: '#' },
-        { title: 'Convocatoria abierta', link: '#' },
-        { title: 'Oportunidad Laboral', link: '#' },
-        { title: 'Programa', link: '#' },
-        { title: 'Programa en ejecución', link: '#' },
-        { title: 'Programas ejecutados', link: '#' },
-        { title: 'Sala de Prensa', link: '#' },
-        { title: 'Todos', link: '#' }
+        { title: 'Blog', link: '#', type: 'Blog' }, 
+        { title: 'Convocatoria abierta', link: '#', type: 'Convocatoria' },
+        { title: 'Oportunidad Laboral', link: '#', type: 'Oferta Laboral' },
+        { title: 'Programa', link: '#', type: 'Programa' },
+        { title: 'Programa en ejecución', link: '#', type: 'Ejecucion' },
+        { title: 'Programas ejecutados', link: '#', type: 'Ejecutados' },
+        { title: 'Sala de Prensa', link: '#', type: 'Prensa' },
+        { title: 'Todos', link: '#', type: null }, 
     ]);
 
     return (
-        <div className="container mx-auto FondoGray rounded-lg  items-center ">
+        <div className="container mx-auto FondoGray widthspecial rounded-lg  items-center ">
             <div className="flex flex-wrap justify-center items-center py-4 px-4 gap-4">
                 {menuItems.map((item, index) => (
-                    <a key={index} href={item.link} className="text-white text-sm md:text-base hover:underline mr-4">{item.title}</a>
+                    <a key={index} href={item.link} className="text-white text-sm md:text-base hover:underline mr-4 letterspecial" onClick={() => setFilterType(item.type)}>
+                        {item.title}
+                    </a>
                 ))}
             </div>
         </div>

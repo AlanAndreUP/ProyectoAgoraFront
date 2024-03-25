@@ -34,9 +34,9 @@ const Home: React.FC = () => {
       <ImgContainer
         src="/ImgContainer.webp"
         alt="Convocatoria 2024"
-        buttonText="Convocatoria 2024 Abierta" />
+         />
       <main>
-        <section className="pt-20 pb-10">
+        <section className="pt-20 pb-10 ">
           <div className="container mx-auto grid grid-cols-2 gap-4">
             <div className="col-span-1">
               <h1 className="text-3xl font-bold TextColor">What Do We Do?</h1>
@@ -53,9 +53,9 @@ const Home: React.FC = () => {
           </div>
         </section>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card imageUrl="/Cards/Card1.png" title="Entrepreneurs and thriving small businesses" texto="We offer business training, market outreach and access to financing to entrepreneurs and thriving small businesses on their journey towards economic, social and environmental sustainability." />
-          <Card imageUrl="/Cards/Card2.png" title="Ecosystem" texto="We contribute to strengthen the ecosystem of entrepreneurs and thriving small businesses with events, such as our Forming Catalysts program, and as co-leaders of the Impact Network, comprising +100 organizations in the region" />
-          <Card imageUrl="/Cards/Card3.png" title="Inclusive Projects" texto="We execute specific projects together with partners with whom we share our vision for financial inclusion, gender equality, diversification, resilience and sustainability in value chains, and adaptation to climate change in the region." />
+          <Card hoverColor='orange' imageUrl="/Cards/Card1.png" title="Entrepreneurs and thriving small businesses" texto="We offer business training, market outreach and access to financing to entrepreneurs and thriving small businesses on their journey towards economic, social and environmental sustainability." />
+          <Card  hoverColor='green 'imageUrl="/Cards/Card2.png" title="Ecosystem" texto="We contribute to strengthen the ecosystem of entrepreneurs and thriving small businesses with events, such as our Forming Catalysts program, and as co-leaders of the Impact Network, comprising +100 organizations in the region" />
+          <Card  hoverColor='red'imageUrl="/Cards/Card3.png" title="Inclusive Projects" texto="We execute specific projects together with partners with whom we share our vision for financial inclusion, gender equality, diversification, resilience and sustainability in value chains, and adaptation to climate change in the region." />
         </div>
     
         <section className="pt-20 pb-10">

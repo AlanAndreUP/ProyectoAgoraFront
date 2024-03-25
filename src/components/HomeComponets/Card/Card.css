@@ -1,3 +1,20 @@
 .gradient-background {
     background: linear-gradient(90.27deg, #E2663A -2.26%, #EB9B1A 98.84%);
   }
+  .hoverEffect:hover {
+  
+    cursor: pointer; 
+    color: white;
+  }
+  
+.hoverEffect.orange:hover {
+  background:linear-gradient(90.27deg, #E2663A -2.26%, #EB9B1A 98.84%);
+}
+
+.hoverEffect.green:hover {
+  background: linear-gradient(90deg, #0D9A51 0%, #02804C 100%);
+}
+
+.hoverEffect.red:hover {
+  background: linear-gradient(359.74deg, #C1285D 10.64%, #9C2C4C 104.83%);
+}

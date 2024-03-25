@@ -10,7 +10,7 @@ import Carrusel from "@/components/HomeComponets/Carrusel/Carrusel";
 import CardImpacto from "@/components/HomeComponets/CardImpacto/CardImpacto";
 import Newsletter from "@/components/HomeComponets/Newsletter/Newsletter";
 import Footer from "@/components/HomeComponets/Footer/Footer";
-import "dotenv/config";
+
 import Loader from "@/components/HomeComponets/Loader/Loader";
 
 
@@ -34,7 +34,8 @@ const Home: React.FC = () => {
       <ImgContainer
         src="/ImgContainer.webp"
         alt="Convocatoria 2024"
-        buttonText="Convocatoria 2024 Abierta" />
+
+       />
       <main>
         <section className="pt-20 pb-10">
           <div className="container mx-auto grid grid-cols-2 gap-4">
@@ -53,9 +54,9 @@ const Home: React.FC = () => {
           </div>
         </section>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card imageUrl="/Cards/Card1.png" title="Emprendimientos y pequeñas empresas en crecimiento" texto=" Ofrecemos formación empresarial, vinculación a mercados y acceso a financiamiento a emprendedores y pequeñas empresas en crecimiento en su camino hacia la sostenibilidad económica, social y ambiental." />
-          <Card imageUrl="/Cards/Card2.png" title="Ecosistema" texto="Contribuimos al fortalecimiento del ecosistema de emprendedores y pequeñas empresas en crecimiento a través de eventos, tales como el programa Formando Catalizadores, y el co-liderazgo de la Red de Impacto, integrada por más de 100 organizaciones de la región." />
-          <Card imageUrl="/Cards/Card3.png" title="Proyectos inclusivos" texto="Ejecutamos proyectos específicos junto a aliados con los que compartimos nuestra visión por la inclusión financiera, la equidad de género, la diversificación, resiliencia y sostenibilidad en las cadenas de valor, y la adaptación al cambio climático en la región." />
+          <Card  hoverColor='red' imageUrl="/Cards/Card1.png" title="Emprendimientos y pequeñas empresas en crecimiento" texto=" Ofrecemos formación empresarial, vinculación a mercados y acceso a financiamiento a emprendedores y pequeñas empresas en crecimiento en su camino hacia la sostenibilidad económica, social y ambiental." />
+          <Card  hoverColor='green'imageUrl="/Cards/Card2.png" title="Ecosistema" texto="Contribuimos al fortalecimiento del ecosistema de emprendedores y pequeñas empresas en crecimiento a través de eventos, tales como el programa Formando Catalizadores, y el co-liderazgo de la Red de Impacto, integrada por más de 100 organizaciones de la región." />
+          <Card  hoverColor='orange'imageUrl="/Cards/Card3.png" title="Proyectos inclusivos" texto="Ejecutamos proyectos específicos junto a aliados con los que compartimos nuestra visión por la inclusión financiera, la equidad de género, la diversificación, resiliencia y sostenibilidad en las cadenas de valor, y la adaptación al cambio climático en la región." />
         </div>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-10">
           <h1 className="text-3xl font-bold TextColor">Convocatorias abiertas y novedades</h1>

@@ -20,11 +20,15 @@ const Home: React.FC = () => {
     const [filterType, setFilterType] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const blogsPerPage = 9;
+     var endpoint ="es";
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(process.env.API_ENDPOINT!+"es");
+                if (window.location.pathname.startsWith("/en")) {
+                    endpoint = "en";
+                }
+                const response = await fetch(process.env.API_ENDPOINT!+endpoint);
                 if (!response.ok) {
                     throw new Error('Api no responde');
                 }
@@ -62,11 +66,11 @@ const Home: React.FC = () => {
                                 <div className="FondoBlue text-white py-16 rounded-lg overflow-hidden">
                                     <div className="container mx-auto">
                                         <div className="sm:col-span-1 flex justify-start mb-4 pl-8">
-                                            <p className="mr-2 ">NUESTRO BLOG</p>
+                                            <p className="mr-2 ">OUR BLOG</p>
                                         </div>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-8">
                                             <div className="sm:col-span-1">
-                                                <h1 className="text-3xl font-bold mb-4">Conoce nuestros últimos artículos y noticias</h1>
+                                                <h1 className="text-3xl font-bold mb-4">Find out our latest articles and news</h1>
                                             </div>
                                         </div>
                                     </div>

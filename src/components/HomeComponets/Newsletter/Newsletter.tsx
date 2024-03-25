@@ -4,7 +4,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const Newsletter: React.FC = () => {
     const [token, setToken] = useState('');
-    const [siteKey, setSiteKey] = useState(process.env.REACT_APP_HCAPTCHA_SITE_KEY || '28b5c908-c010-4342-86fc-8a6a6d267645');
+    const [siteKey, setSiteKey] = useState(process.env.REACT_APP_HCAPTCHA_SITE_KEY!);
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [correoElectronico, setCorreoElectronico] = useState('');
@@ -12,6 +12,9 @@ const Newsletter: React.FC = () => {
     const [empresa, setEmpresa] = useState('');
     const [pais, setPais] = useState('');
     const [errores, setErrores] = useState<Record<string, string>>({});
+    const [captchaCompletado, setCaptchaCompletado] = useState(false);
+    const [enviando, setEnviando] = useState(false);
+    const [enviado, setEnviado] = useState(false);
 
     const validarCampos = () => {
         const errores: Record<string, string> = {};
@@ -42,7 +45,7 @@ const Newsletter: React.FC = () => {
         e.preventDefault();
     
         const errores = validarCampos();
-        if (Object.keys(errores).length > 0) {
+        if (Object.keys(errores).length > 0 || !captchaCompletado) {
             setErrores(errores);
             return;
         }
@@ -57,7 +60,8 @@ const Newsletter: React.FC = () => {
         };
     
         try {
-            const response = await fetch('https://proyectobackendagora.onrender.com/users/Newsletter', {
+            setEnviando(true);
+            const response = await fetch(process.env.API_ENDPOINT_NEWSLETTER!, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -67,23 +71,25 @@ const Newsletter: React.FC = () => {
     
             if (response.ok) {
                 console.log('Datos enviados correctamente');
+                setEnviado(true); 
             } else {
                 console.error('Error al enviar los datos:', response.statusText);
             }
         } catch (error:any) {
             console.error('Error al enviar los datos:', error.message);
+        } finally {
+            setEnviando(false);
         }
     };
-
-    // Obtener la ruta actual
+    
     const rutaActual = window.location.pathname;
 
-    // Validar si la ruta es '/en'
+   
     const esEn = rutaActual === '/en';
     return (
         <div className="backgroundgray p-8 rounded-md shadow-md px-30">
             <div className='container mx-auto'>
-                {/* Utilizar la variable 'esEn' para mostrar contenido en inglés si es necesario */}
+               
                 <h2 className="text-2xl text-white font-bold mb-4">{esEn ? 'Subscribe to our newsletter' : 'Suscríbete a nuestro newsletter'}</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -167,11 +173,16 @@ const Newsletter: React.FC = () => {
                     <div className="flex flex-col my-4">
                         <HCaptcha
                             sitekey={siteKey}
-                            
+                            onVerify={(token: string) => {
+                                setToken(token);
+                                setCaptchaCompletado(true); 
+                            }}
                         />
                     </div>
-                    <button type="submit" className="buttonenviar font-bold py-2 px-4 rounded-md">{esEn ? 'Send' : 'Enviar'}</button>
-                </form>
+                    <button type="submit" className="buttonenviar font-bold py-2 px-4 rounded-md" disabled={enviando || enviado}>
+                        {enviando ? 'Enviando...' : (enviado ? 'Enviado Correctamente' : 'Enviar')}
+                    </button>
+                     </form>
             </div>
         </div>
     );
