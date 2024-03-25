@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                         <a href="/" className={`rounded px-4 py-1 text-sm  transition-colors duration-300 ${activo === 'ES' ? 'bg-black text-white font-bold' : ''}`} onClick={() => handleSetActive('ES')}>
                             ES
                         </a>
-                        <a href="/" className={`rounded px-4 py-1  text-sm transition-colors duration-300 ${activo === 'EN' ? 'bg-black text-white' : ''}`} onClick={() => handleSetActive('EN')}>
+                        <a href="/en" className={`rounded px-4 py-1  text-sm transition-colors duration-300 ${activo === 'EN' ? 'bg-black text-white' : ''}`} onClick={() => handleSetActive('EN')}>
                             EN
                         </a>
                     </nav>
