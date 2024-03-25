@@ -98,7 +98,9 @@ const Header: React.FC = () => {
             <a href="/sedes" className="elementor-item-blue">
               {renderLinkText("Change Lab")}
             </a>
-            <a href="/donar" className="buttondonar marginstandarright">
+           
+          </nav>
+          <a href="/donar" className="buttondonar marginstandarright">
               {renderLinkText("Donar")}
             </a>
             <a
@@ -119,11 +121,9 @@ const Header: React.FC = () => {
             >
               EN
             </a>
-          </nav>
-
           <div className="flex items-center">
             <button className="lg:hidden ml-4 text-gray-600" onClick={toggleMenu}>
-              {isOpen ? "Cerrar" : "Menú"}
+              {isOpen ? "-" : "+"}
             </button>
           </div>
         </div>

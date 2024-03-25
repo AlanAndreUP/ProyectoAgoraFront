@@ -1,5 +1,5 @@
 "use client"
-
+import Webaccessibilty from '@/components/HomeComponets/Webaccessibility/Webaccessibility';
 import { useEffect, useState } from 'react';
 import React from "react";
 import Header from "@/components/HomeComponets/Header/Header";
@@ -36,6 +36,7 @@ const Home: React.FC = () => {
         alt="Convocatoria 2024"
 
        />
+       <Webaccessibilty />
       <main>
         <section className="pt-20 pb-10">
           <div className="container mx-auto grid grid-cols-2 gap-4">
@@ -142,9 +143,10 @@ const Home: React.FC = () => {
         </section>
 
 
-
+        
       </main>
       </div>
+      
        )}
     </div>
   );
