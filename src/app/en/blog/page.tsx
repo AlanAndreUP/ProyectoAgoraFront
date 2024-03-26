@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     const [filterType, setFilterType] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const blogsPerPage = 9;
-     var endpoint ="es";
+    var endpoint = "es";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
                 if (window.location.pathname.startsWith("/en")) {
                     endpoint = "en";
                 }
-                const response = await fetch(process.env.API_ENDPOINT!+endpoint);
+                const response = await fetch(process.env.API_ENDPOINT! + endpoint);
                 if (!response.ok) {
                     throw new Error('Api no responde');
                 }
@@ -61,32 +61,29 @@ const Home: React.FC = () => {
             ) : (
                 <div>
                     <Header />
-                  
+
                     <main>
-                    <Webaccessibilty />
-                        <section className="pt-40 pb-20 px-20">
-                            <div className="container mx-auto grid grid-cols-2 gap-4">
+                        <Webaccessibilty />
+                        <section className="pt-32 pb-20 px-8 sm:px-20">
+                            <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="FondoBlue text-white py-16 rounded-lg overflow-hidden">
                                     <div className="container mx-auto">
-                                        <div className="sm:col-span-1 flex justify-start mb-4 pl-8">
-                                            <p className="mr-2 ">OUR BLOG</p>
-                                        </div>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-8">
-                                            <div className="sm:col-span-1">
-                                                <h1 className="text-3xl font-bold mb-4">Find out our latest articles and news</h1>
-                                            </div>
+                                        <div className="sm:col-span-1 flex flex-col justify-center items-center sm:items-start mb-4 pl-8">
+                                            <p className="mb-2 sm:mb-0">OUR BLOG</p>
+                                            <h1 className="text-3xl font-bold text-center sm:text-left mb-4">Find out our latest articles and news</h1>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="relative">
                                     <img
-                                        className="object-cover w-full h-full absolute top-0 left-0 z-0 rounded-lg"
+                                        className="object-cover w-full h-full sm:absolute top-0 left-0 z-0 rounded-lg"
                                         src="/blog1.png"
                                         alt="Caminando"
                                     />
                                 </div>
                             </div>
                         </section>
+
 
                         <Navbar setFilterType={setFilterType} />
                         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 pl-8 py-4">

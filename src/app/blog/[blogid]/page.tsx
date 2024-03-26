@@ -80,12 +80,12 @@ const BlogPage: React.FC = () => {
                     {blog ? (
                         <main>
                               <Webaccessibilty />
-                            <section className="pt-20 pb-10">
-                                <div className="FondoGray text-white py-16 px-32 rounded-lg overflow-hidden">
+                              <section className="pt-20 pb-10">
+                                <div className="FondoGray text-white py-16 px-8 sm:px-32 rounded-lg overflow-hidden">
                                     <div className="container mx-auto">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
-                                            <div>
-                                                <p className=" mb-4">{blog.type}</p>
+                                            <div className="mb-8 sm:mb-0">
+                                                <p className="mb-4">{blog.type}</p>
                                                 <h1 className="max-w-lg text-3xl font-bold">{blog.title}</h1>
                                             </div>
                                             <div className="sm:col-span-1 flex justify-center">
@@ -93,14 +93,13 @@ const BlogPage: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div className="flex justify-center py-16">
-                                    <img src={blog.image} alt={blog.title} className="w-full max-w-lg" />
-                                </div >
-                                <h1 className="px-60 text-3xl font-bold pb-4 TextColor">{blog.title}</h1>
-                                <p className='px-60 pb-4'> Escrito por {blog.author}</p>
-                                <div className='px-60' dangerouslySetInnerHTML={{ __html: blog.content }}></div>
+                                <div className="container mx-auto py-16">
+                                    <img src={blog.image} alt={blog.title} className="w-full max-w-lg mx-auto" />
+                                </div>
+                                <h1 className="text-3xl font-bold pb-4 px-8 sm:px-16 TextColor">{blog.title}</h1>
+                                <p className="pb-4 px-8 sm:px-16">Escrito por {blog.author}</p>
+                                <div className="px-8 sm:px-16" dangerouslySetInnerHTML={{ __html: blog.content }}></div>
                             </section>
                             <div className="col-span-1 grid grid-cols-6 w-30 h-20">
                                 <div className="flex justify-center col-span-6">

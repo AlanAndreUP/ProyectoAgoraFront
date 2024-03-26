@@ -25,23 +25,39 @@
   }
   
   .elementor-item-blue:hover {
-      color: #c36; /* Cambiar el color a azul al hacer hover */
-      transform: scale(var(--hover-scale)); /* Hacer el elemento 10% más grande al hacer hover */
+      color: #c36; 
+      transform: scale(var(--hover-scale)); 
   }
   
   .buttondonar {
-      background-color: var(--button-bg-color);
-      color: white;
-      border: 2px solid var(--button-bg-color);
-      border-radius: 1em; 
-      padding: 0.1em 2em; 
+    background-color: var(--button-bg-color);
+    color: white;
+    border: 2px solid var(--button-bg-color);
+    border-radius: 1em; 
+    padding: 0.1em 2em; 
+    font-size: 0.50em; 
+  
+    cursor: pointer;
+  }
+  
+
+  @media (min-width: 0px) and (max-width: 767px) {
+    .buttondonar {
+      font-size: 0.50em; 
+    }
+  }
+  
+  /* Media query para dispositivos grandes */
+  @media (min-width: 768px) {
+    .buttondonar {
       font-size: 0.80em; 
-      cursor: pointer;
+    }
   }
   
   .buttondonar:hover {
-      background-color: var(--button-hover-bg-color);
+    background-color: var(--button-hover-bg-color);
   }
+  
   
   .containermargin {
       max-width: var(--container-max-width);
@@ -64,5 +80,25 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+  }  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
   }
-  
+
+  @media (min-width: 768px) {
+    .nav-menu {
+      flex-direction: row;
+      max-height: none;
+      overflow: visible;
+      transition: none;
+    }
+  }
+
+  .nav-menu.active {
+    max-height: 200px; 
+    transition: max-height 0.3s ease-in;
+  }
