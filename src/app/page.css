@@ -12,8 +12,16 @@
     padding: 0.1em 1em; 
     font-size: 1em; 
     cursor: pointer;
-    width: 15em;
+    width: 20em; 
 }
+
+@media screen and (max-width: 768px) { 
+    .buttonOferta {
+        width: 15em;
+    }
+}
+
+
 
 .buttonOferta:hover {
     background-color: var(--button-hover-bg-color);
